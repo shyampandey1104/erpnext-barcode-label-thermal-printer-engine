@@ -54,8 +54,7 @@ class ThermalBarcodePrintEngine:
             zpl_lines.append(f"^FO20,260^A0N,18,18^FDBatch: {spec.batch_number} Exp: {spec.expiry_date}^FS")
 
         zpl_lines.append("^XZ")  # End Format
-        raw_zpl = "
-".join(zpl_lines)
+        raw_zpl = "\n".join(zpl_lines)
 
         return GeneratedLabelPayload(
             item_code=spec.item_code,
